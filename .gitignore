@@ -1,0 +1,5 @@
+Training/
+Testing/
+best_model_vgg.keras
+.venv/
+.DS_Store/
