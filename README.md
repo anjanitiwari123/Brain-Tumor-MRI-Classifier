@@ -176,23 +176,16 @@ Confidence Score
 ## 📋 Requirements
 
 ```
-streamlit
-tensorflow
-numpy
+streamlit==1.38.0
+tensorflow==2.16.1
+numpy<2
 pandas
 Pillow
+scikit-learn
+opencv-python-headless
 ```
 
 ---
-
-## 🎯 Future Improvements
-
-- Explainable AI using Grad-CAM
-- Tumor Localization
-- Clinical Metadata Integration
-- Docker Deployment
-- Cloud Deployment
-- Model Quantization for Edge Devices
 
 ---
 
