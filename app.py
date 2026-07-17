@@ -19,11 +19,10 @@ st.write(
 def load_model(model_path: str):
     if not os.path.exists(model_path):
         return None
-    return tf.keras.models.load_model(model_path)
+    return tf.keras.models.load_model(model_path,compile=False)
 
 
 def preprocess_image(image: Image.Image) -> np.ndarray:
-    """Resize, convert to array, scale to [0, 1], and add batch dimension."""
     image = image.convert("RGB")
     image = image.resize((IMAGE_SIZE, IMAGE_SIZE))
     arr = np.array(image)
@@ -47,7 +46,7 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     col1, col2 = st.columns(2)
     with col1:
-        st.image(image, caption="Uploaded image", use_container_width=True)
+        st.image(image, caption="Uploaded image",width=300)
     if model is None:
         st.stop()
     with st.spinner("Running inference..."):
